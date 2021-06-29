@@ -1,0 +1,223 @@
+  <!--breadcrumbs area start-->
+  <div class="breadcrumbs_area">
+    <div class="container">   
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb_content">
+                    <ul>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li>Giỏ Hàng</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>         
+</div>
+<!--breadcrumbs area end-->
+
+<!--shopping cart area start -->
+<div class="cart_page_bg">
+    <div class="container">
+        <div class="shopping_cart_area">
+            <form action="#"> 
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="table_desc">
+                                <div class="cart_page table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th class="product_remove">Xóa</th>
+                                                <th class="product_thumb">Ảnh</th>
+                                                <th class="product_name">Tên sản phẩm</th>
+                                                <th class="product-price">Giá</th>
+                                                <th class="product_quantity">Số lượng</th>
+                                                <th class="product_total">Tiền</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let c of items">
+                                               <td class="product_remove"><a (click)="_cart.deleteItem(c.item_id)"><i class="fa fa-trash-o"></i></a></td>
+                                                <td class="product_thumb"><a href="#"><img src="{{c.item_image}}" alt=""></a></td>
+                                                <td class="product_name"><a href="#">{{c.item_name}}</a></td>
+                                                <td class="product-price">{{c.item_price | currency: "VND" }}</td>
+                                                <td class="product_quantity"><label>Quantity</label> <input #inp   min="0" max="100" (change)="addQty(c,inp.value)" [value]="c.quantity" type="number"></td>
+                                                <td class="product_total">{{c.money | currency: "VND"}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>   
+                                </div>  
+                                <div class="cart_submit">
+                                    <button type="button" (click)="clearCart()">Xóa Giỏ Hàng</button>
+                                    <button type="submit">Cập Nhật Giỏ Hàng</button>
+                                </div>      
+                            </div>
+                         </div>
+                     </div>
+                     <!--coupon code area start-->
+                    <div class="coupon_area">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="coupon_code left">
+                                    <h3>Phiếu Mua Hàng</h3>
+                                    <div class="coupon_inner">   
+                                        <p>Nhập mã phiếu giảm giá của bạn nếu bạn có</p>                                
+                                        <input placeholder="Nhập mã giảm giá" type="text">
+                                        <button type="submit">Áp Dụng Phiếu Giảm Giá</button>
+                                    </div>    
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="coupon_code right">
+                                    <h3>Tổng Giỏ Hàng</h3>
+                                    <div class="coupon_inner">
+                                       <div class="cart_subtotal">
+                                          
+                                       </div>
+                                       <div class="cart_subtotal ">
+                                          
+                                       </div>
+                                       <a href="#">Vận chuyển</a>
+
+                                       <div class="cart_subtotal">
+                                           <p>Tổng Tiền</p>
+                                           <p class="cart_amount">{{total |currency:"VND"}}</p>
+                                       </div>
+                                       <div class="checkout_btn">
+                                           <a  routerLink="/customer/checkout" >Tiến Hành Đặt Hàng</a>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--coupon code area end-->
+                </form>   
+        </div>
+    </div>
+</div>
+<!--shopping cart area end -->
+
+ <!--brand area start-->
+<div class="brand_area brand_padding">
+    <div class="container">
+        <div class="col-12">
+            <div class="brand_container owl-carousel ">
+                <div class="brand_list">
+                    <div class="single_brand">
+                        <a href="#"><img src="assets/img/brand/brand1.jpg" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="assets/img/brand/brand2.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="brand_list">
+                    <div class="single_brand">
+                        <a href="#"><img src="assets/img/brand/brand3.jpg" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="assets/img/brand/brand4.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="brand_list">
+                    <div class="single_brand">
+                        <a href="#"><img src="assets/img/brand/brand5.jpg" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="assets/img/brand/brand6.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="brand_list">
+                    <div class="single_brand">
+                        <a href="#"><img src="assets/img/brand/brand7.jpg" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="assets/img/brand/brand8.jpg" alt=""></a>
+                    </div>
+                </div>
+                 <div class="brand_list">
+                    <div class="single_brand">
+                        <a href="#"><img src="assets/img/brand/brand1.jpg" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="assets/img/brand/brand2.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="brand_list">
+                    <div class="single_brand">
+                        <a href="#"><img src="assets/img/brand/brand3.jpg" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="assets/img/brand/brand4.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="brand_list">
+                    <div class="single_brand">
+                        <a href="#"><img src="assets/img/brand/brand5.jpg" alt=""></a>
+                    </div>
+                    <div class="single_brand">
+                        <a href="#"><img src="assets/img/brand/brand6.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--brand area end-->
+
+<!--newsletter area start-->
+<div class="newsletter_area newsletter_padding">
+    <div class="container">
+        <div class="newsletter_inner">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="newsletter_container">
+                        <h3>Theo Dõi Chúng Tôi</h3>
+                        <p>Chúng tôi giúp việc hợp nhất, tiếp thị và theo dõi trang web truyền thông xã hội của bạn trở nên dễ dàng.</p>
+                        <div class="footer_social">
+                           <ul>
+                               <li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>
+                               <li><a class="twitter" href="#"><i class="icon-twitter2"></i></a></li>
+                               <li><a class="rss" href="#"><i class="icon-rss"></i></a></li>
+                               <li><a class="youtube" href="#"><i class="icon-youtube"></i></a></li>
+                               <li><a class="google" href="#"><i class="icon-google"></i></a></li>
+                               <li><a class="instagram2" href="#"><i class="icon-instagram2"></i></a></li>
+                           </ul>
+                       </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="newsletter_container">
+                        <h3>BẢN TIN NGAY</h3>
+                        <p>Tham gia cùng hơn 60.000 người đăng ký và nhận phiếu giảm giá mới vào thứ Tư hàng tuần.</p>
+                        <div class="subscribe_form">
+                            <form id="mc-form" class="mc-form footer-newsletter" >
+                                <input id="mc-email" type="email" autocomplete="off" placeholder="Nhập địa chỉ email của bạn ...." />
+                                <button id="mc-submit">Đăng Ký</button>
+                            </form>
+                            <!-- mailchimp-alerts Start -->
+                            <div class="mailchimp-alerts text-centre">
+                                <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                                <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                            </div><!-- mailchimp-alerts end -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-7">
+                    <div class="newsletter_container col_3">
+                        <h3>TẢI ỨNG DỤNG</h3>
+                        <p>Ứng dụng VanHieu hiện đã có trên Google Play & App Store. Lấy nó ngay.</p>
+                        <div class="app_img">
+                           <ul>
+                               <li><a href="#"><img src="assets/img/icon/icon-app.jpg" alt=""></a></li>
+                               <li><a href="#"><img src="assets/img/icon/icon1-app.jpg" alt=""></a></li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--newsletter area end-->

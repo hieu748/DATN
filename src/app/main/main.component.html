@@ -1,0 +1,460 @@
+
+    <!--top tags area start-->
+    
+    <!--top tags area end-->
+
+    <!--slider area start-->
+    <section class="slider_section mb-80">
+        <div class="slider_area slider_carousel owl-carousel">
+            <div class="single_slider d-flex align-items-center" data-bgimg="assets/img/slider/anh4.jpg">
+               <div class="container">
+                   <div class="row">
+                       <div class="col-12">
+                           <div class="slider_content">
+                                 
+                               
+                            </div>
+                       </div>
+                   </div>
+               </div> 
+            </div>
+            <div class="single_slider d-flex align-items-center" data-bgimg="assets/img/slider/anh3.jpg">
+                <div class="container">
+                   <div class="row">
+                       <div class="col-12">
+                           <div class="slider_content center">
+                                
+                            </div>
+                       </div>
+                   </div>
+               </div>
+            </div>
+            <div class="single_slider d-flex align-items-center" data-bgimg="assets/img/slider/anh2.jpg">
+                <div class="container">
+                   <div class="row">
+                       <div class="col-12">
+                           <div class="slider_content">
+                                
+                            </div>
+                       </div>
+                   </div>
+               </div>
+            </div>
+        </div>
+    </section>
+    <!--slider area end-->
+    
+  <!--banner area start-->
+    <div class="banner_area mb-80">
+        <div class="container">
+           <div class="row">
+               <div class="col-12">
+                   <div class="welcome_title">
+                       <h3>CHÀO MỪNG ĐẾN VỚI CỬA HÀNG</h3>
+                       <h2>CỬA HÀNG MUA SẮM TÙY CHỈNH TRỰC TUYẾN</h2>
+                   </div>
+               </div>
+           </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <figure class="single_banner">
+                        <div class="banner_thumb">
+                            <a href="shop.html"><img src="assets/img/bg/banner11.jpg" width="450" height="90" alt=""></a>
+                        </div>
+                    </figure>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <figure class="single_banner">
+                        <div class="banner_thumb">
+                            <a href="shop.html"><img src="assets/img/bg/banner2.jpg" width="450" height="100" alt=""></a>
+                        </div>
+                    </figure>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <figure class="single_banner">
+                        <div class="banner_thumb">
+                            <a href="shop.html"><img src="assets/img/bg/banner3.jpg" width="450" height="100" alt=""></a>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--banner area end-->
+    
+    <!--Categories product area start-->
+    <!--Categories product area end-->
+    <!--home section bg area start-->
+    <div class="home_section_bg">
+        <!--product area start-->
+        <div class="product_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_title">
+                           <h2>SẢN PHẨM CỦA TÔI</h2>                   
+                        </div>
+                        <div class="product_tab_btn">
+                            <ul class="nav" role="tablist">
+                                <li>
+                                    <a class="active" data-toggle="tab" href="#Sellers" role="tab" aria-controls="Sellers" aria-selected="true"> 
+                                        SẢN PHẨM MỚI
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#Featured" role="tab" aria-controls="Featured" aria-selected="false">
+                                        SẢN PHẨM BÁN CHẠY
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="Sellers" role="tabpanel">
+                        <div class="row">
+                            <div class="product_carousel product_column5 owl-carousel">          
+                               <ng-container *ngFor="let it of list_item">
+                                <div class="col-lg-3">
+                                   <div class="product_items">
+                                        <article class="single_product">
+                                            <figure>
+                                                <div class="product_thumb">
+                                                    <a class="primary_img" [routerLink]="['/product/chitiet',it.item_id]"><img src="{{it.item_image}}"  alt=""></a>
+                                                    <div class="label_product">
+                                                    </div>
+                                                    <div class="quick_button">
+                                                        <a href="#" data-toggle="modal" data-target="#modal_box"  title="quick view"><i class="icon-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="product_content">
+                                                    <div class="product_content_inner">
+                                                        <p class="manufacture_product"><a href="#"></a></p>
+                                                        <h4 class="product_name"><a [routerLink]="['/product/chitiet',it.item_id]">{{it.item_name}}</a></h4>
+                                                        <div class="product_rating">
+                                                           <ul>
+                                                               <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
+                                                               <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
+                                                               <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
+                                                               <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
+                                                               <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
+                                                           </ul>
+                                                        </div>
+                                                        <div class="price_box"> 
+                                                            <span class="current_price">{{ it.item_price | currency: "VND" }}</span>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="action_links">
+                                                         <ul>
+                                                            <li class="add_to_cart"><a (click)="addToCart(it)" title="Add to cart">Thêm Vào Giỏ Hàng</a></li>
+                                                            <li class="wishlist"><a href="wishlist.html"  title="Add to Wishlist"><i class="icon-heart"></i></a></li>
+                                                            <li class="compare"><a href="compare.html" title="Add to Compare"><i class="icon-rotate-cw"></i></a></li>  
+                                                        </ul>
+                                                    </div>  
+                                                </div>
+                                            </figure>
+                                        </article>
+                                        
+                                    </div>
+                               </div>
+                            </ng-container>
+                            </div> 
+                        </div> 
+                    </div>
+                    <div class="tab-pane fade" id="Featured" role="tabpanel">
+                        <div class="row">
+                            <div class="product_carousel product_column5 owl-carousel">
+                                <ng-container *ngFor="let it of list_item_moi">
+                               <div class="col-lg-3">
+                                   <div class="product_items">
+                                        <article class="single_product">
+                                            <figure>
+                                                <div class="product_thumb">
+                                                    <a class="primary_img" [routerLink]="['/product/chitiet',it.item_id]"><img src="{{it.item_image}}" alt=""></a>
+                                                    <div class="label_product">
+                                                      
+                                                    </div>
+                                                    <div class="quick_button">
+                                                        <a href="#" data-toggle="modal" data-target="#modal_box"  title="quick view"><i class="icon-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="product_content">
+                                                    <div class="product_content_inner">
+                                                        <p class="manufacture_product"><a href="#"></a></p>
+                                                        <h4 class="product_name"><a [routerLink]="['/product/chitiet',it.item_id]">{{it.item_name}}</a></h4>
+                                                        <div class="product_rating">
+                                                           <ul>
+                                                               <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
+                                                               <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
+                                                               <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
+                                                               <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
+                                                               <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
+                                                           </ul>
+                                                        </div>
+                                                        <div class="price_box"> 
+                                                            <span class="current_price">{{ it.item_price | currency: "VND" }}</span>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="action_links">
+                                                         <ul>
+                                                            <li class="add_to_cart"><a (click)="addToCart(it)" title="Add to cart">Thêm Vào Giỏ Hàng</a></li>
+                                                            <li class="wishlist"><a href="wishlist.html"  title="Add to Wishlist"><i class="icon-heart"></i></a></li>
+                                                            <li class="compare"><a href="compare.html" title="Add to Compare"><i class="icon-rotate-cw"></i></a></li>  
+                                                        </ul>
+                                                    </div>  
+                                                </div>
+                                            </figure>
+                                        </article>
+                                    </div>
+                               </div>
+                            </ng-container>
+                            </div> 
+                        </div> 
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <!--product area end-->
+        <!--banner area start-->
+        <!--banner area end-->
+        <!--product area start-->
+        <div class="product_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_title title_style2">
+                           <div class="title_content">
+                               <h2>SẢN PHẨM KHUYẾN MÃI</h2>  
+                            </div>                 
+                        </div>
+                    </div>
+                </div> 
+                <div class="product_container">
+                   <div class="row">
+                    <ng-container *ngFor="let it of list_item_khuyenmai">
+                        <div class="col-lg-6 col-md-12">
+                          <div class="product_style_left">
+                                <article class="single_product">
+                                    <figure>
+                                        <div class="product_thumb">
+                                            <a class="primary_img" [routerLink]="['/product/chitiet',it.item_id]"><img width="250" src="{{it.item_image}}" alt=""></a>
+                                            <div class="label_product">
+                                                <span class="label_sale">-30%</span>
+                                            </div>
+                                        </div>
+                                        <div class="product_content">
+                                            
+                                            <h4 class="product_name"><a [routerLink]="['/product/chitiet',it.item_id]">{{it.item_name}}</a></h4>
+                                            <div class="product_rating">
+                                               <ul>
+                                                   <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
+                                                   <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
+                                                   <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
+                                                   <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
+                                                   <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
+                                               </ul>
+                                            </div>
+                                            <div class="price_box">  
+                                                <span class="current_price">{{ it.item_price | currency: "VND" }}</span>
+                                            </div>
+                                            
+                                            <div class="action_links">
+                                                 <ul>
+                                                    <li class="add_to_cart"><a (click)="addToCart(it)" title="Add to cart">Thêm Vào Giỏ Hàng</a></li>
+                                                    <li class="quick_view"><a href="#" data-toggle="modal" data-target="#modal_box"  title="quick view"><i class="icon-search"></i></a></li>
+                                                    <li class="wishlist"><a href="wishlist.html"  title="Add to Wishlist"><i class="icon-heart"></i></a></li>
+                                                    <li class="compare"><a href="compare.html" title="Add to Compare"><i class="icon-rotate-cw"></i></a></li>  
+                                                </ul>
+                                            </div> 
+                                        </div>
+                                    </figure>
+                                </article>
+                            </div>
+                        </div>
+                    </ng-container>
+                   </div>
+                     
+                </div>
+            </div>
+        </div>
+        <!--product area end-->
+
+        <!--blog area start-->
+        <div class="blog_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                       <div class="section_title title_style2">
+                           <div class="title_content">
+                               <h2>BÀI ĐĂNG CỦA CỬA HÀNG</h2>
+                               
+                            </div>                 
+                        </div>
+                      </div>
+                </div>   
+                <div class="row">
+                    <div class="blog_container blog_column4 owl-carousel">
+                        <div class="col-lg-3">
+                            <article class="single_blog">
+                                <figure>
+                                    <div class="blog_thumb" >
+                                        <a href="blog-details.html"><img src="assets/img/blog/blog11.jpg"alt=""></a>
+                                    </div>
+                                    <figcaption class="blog_content">
+                                        <h4><a href="blog-details.html">Hướng dẫn cách kết hợp uống sữa để tăng cơ</a></h4> 
+                                        
+                                       
+                                        <footer class="post_readmore">
+                                            <a href="blog-details.html">Đọc Tiếp</a>
+                                        </footer>
+                                    </figcaption>
+                                </figure>
+                            </article>
+                        </div>
+                        <div class="col-lg-3">
+                            <article class="single_blog">
+                                <figure>
+                                    <div class="blog_thumb">
+                                        <a href="blog-details.html"><img src="assets/img/blog/blog12.jpg" alt=""></a>
+                                    </div>
+                                    <figcaption class="blog_content">
+                                        <h4><a href="blog-details.html">Sử dụng các phương phát kết hợp yoya để đưng ra các hình thức tập luyện</a></h4> 
+                                        
+                                        
+                                        <footer class="post_readmore">
+                                            <a href="blog-details.html">Đọc tiếp </a>
+                                        </footer>
+                                    </figcaption>
+                                </figure>
+                            </article>
+                        </div>
+                        <div class="col-lg-3">
+                            <article class="single_blog">
+                                <figure>
+                                    <div class="blog_thumb">
+                                        <a href="blog-details.html"><img src="assets/img/blog/blog5.jpg" alt=""></a>
+                                    </div>
+                                    <figcaption class="blog_content">
+                                        <h4><a href="blog-details.html">Bài tập tốt cho cơ bắp thân hình đẹp nhất</a></h4> 
+                                       
+                                       
+                                        <footer class="post_readmore">
+                                            <a href="blog-details.html">Đọc tiép</a>
+                                        </footer>
+                                    </figcaption>
+                                </figure>
+                            </article>
+                        </div>
+                        <div class="col-lg-3">
+                            <article class="single_blog">
+                                <figure>
+                                    <div class="blog_thumb">
+                                        <a href="blog-details.html"><img src="assets/img/blog/blog14.jpg" alt=""></a>
+                                    </div>
+                                    <figcaption class="blog_content">
+                                        <h4><a href="blog-details.html">Các lời khuyên hướng dẫn của bác sĩ đưa ra cho nhưng người giảm mỡ béo</a></h4> 
+                                        
+                                        <footer class="post_readmore">
+                                            <a href="blog-details.html">Đọc Tiếp</a>
+                                        </footer>
+                                    </figcaption>
+                                </figure>
+                            </article>
+                        </div>
+                        <div class="col-lg-3">
+                            <article class="single_blog">
+                                <figure>
+                                    <div class="blog_thumb">
+                                        <a href="blog-details.html"><img src="assets/img/blog/blog12.jpg" alt=""></a>
+                                    </div>
+                                    <figcaption class="blog_content">
+                                        <h4><a href="blog-details.html">Class aptent eum Fiction Molestie Consequat</a></h4> 
+                                        <div class="post_meta">
+                                            <p><a href="#">eCommerce</a> / 17 July</p>
+                                        </div>
+                                        <div class="post_desc">
+                                            <p>Condimentum blandit est sed mollitia libero pharetra aenean ...</p>
+                                        </div>
+                                        <footer class="post_readmore">
+                                            <a href="blog-details.html">Continue Reading</a>
+                                        </footer>
+                                    </figcaption>
+                                </figure>
+                            </article>
+                        </div>
+                    </div>
+                </div>       
+                        
+                   
+            </div>
+        </div>
+        <!--blog area end-->
+    </div>
+    <!--home section bg area end-->
+    
+    <!--brand area start-->
+    
+    <!--brand area end-->
+    
+    <!--newsletter area start-->
+    <div class="newsletter_area">
+        <div class="container">
+            <div class="newsletter_inner">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="newsletter_container">
+                            <h3>THEO DÕI CHÚNG TÔI</h3>
+                            <p>Chúng tôi giúp việc hợp nhất, tiếp thị và theo dõi trang web truyền thông xã hội của bạn trở nên dễ dàng.</p>
+                            <div class="footer_social">
+                               <ul>
+                                   <li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>
+                                   <li><a class="twitter" href="#"><i class="icon-twitter2"></i></a></li>
+                                   <li><a class="rss" href="#"><i class="icon-rss"></i></a></li>
+                                   <li><a class="youtube" href="#"><i class="icon-youtube"></i></a></li>
+                                   <li><a class="google" href="#"><i class="icon-google"></i></a></li>
+                                   <li><a class="instagram2" href="#"><i class="icon-instagram2"></i></a></li>
+                               </ul>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="newsletter_container">
+                            <h3>BẢN TIN NGAY</h3>
+                            <p>Tham gia cùng hơn 60.000 người đăng ký và nhận phiếu giảm giá mới vào thứ Tư hàng tuần.</p>
+                            <div class="subscribe_form">
+                                <form [formGroup]="" >
+                                    <input id="mc-email" type="email" autocomplete="off" placeholder="Nhập email của bạn..." />
+                                    <button id="mc-submit">Đăng Ký</button>
+                                </form>
+                                <!-- mailchimp-alerts Start -->
+                                <div class="mailchimp-alerts text-centre">
+                                    <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                    <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                                    <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                                </div><!-- mailchimp-alerts end -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-7">
+                        <div class="newsletter_container col_3">
+                            <h3>TẢI ỨNG DỤNG</h3>
+                            <p>Ứng dụng VanHieu hiện đã có trên Google Play & App Store. Lấy nó ngay.</p>
+                            <div class="app_img">
+                               <ul>
+                                   <li><a href="#"><img src="assets/img/icon/icon-app.jpg" alt=""></a></li>
+                                   <li><a href="#"><img src="assets/img/icon/icon1-app.jpg" alt=""></a></li>
+                               </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--newsletter area end-->
+    
+ 
+   
+   
+    
+     
